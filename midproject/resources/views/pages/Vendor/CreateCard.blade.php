@@ -11,6 +11,11 @@ label{
 }
 </style>
 <br><br>
+<div class="row">
+    @include('inc.sidenav')
+</div>
+
+
 <div class="row mx-5 justify-content-center">
 <div class="col-md-6 col-sm-9">
     <div class="title">

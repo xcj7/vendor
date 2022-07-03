@@ -38,27 +38,6 @@
     @include('inc.sidenav')
 </div>
 
-<!-- //////////////////////////////////////////////////////////////////////////////////////////-->
-
-
-<div class="col-md-3">
-        @foreach ($products as $item)
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{asset('Vendor/Create_Card_images/'.$item->image)}}" alt="Card image cap">
-                <div class="card-body">
-                <p class="card-text text-center">{{$item->Product_name}}<br>
-                <span>Price: BDT{{$item->Price}}</span><br>
-                <a href="{{route('addtocart',['id'=>$item->id])}}" class="btn btn-primary" style="color:white">Add to Cart</a></p>
-                </div>
-            </div>
-        @endforeach
-    </div> 
-
-
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
-
 
 
 
@@ -120,7 +99,55 @@
 
 
 
-<div class="row">
+
+<!-- ///////////////////////////////////////////////// -->
+
+<div class="zoom" >
+
+
+
+<div class="container-fluid mt-3 ">
+
+<div class="col-md-3">
+        @foreach ($products as $item)
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{asset('Vendor/Create_Card_images/'.$item->image)}}" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text text-center">{{$item->Product_name}}<br>
+                <span>Price: BDT{{$item->Price}}</span><br>
+                <a href="{{route('addtocart',['id'=>$item->id])}}" class="btn btn-primary" style="color:white">Add to Cart</a></p>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- //////////////////////////////// -->
+
+<!-- <div class="row">
 <nav aria-label="..." >
   <ul class="pagination justify-content-center ">
     <li class="page-item disabled ">
@@ -142,7 +169,7 @@
 
 
 </div>
-
+</div> -->
 
 <!-- /////////////////////////////////////////////////////////////////////////// -->
 

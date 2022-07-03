@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+
+
     @if(Session::has('cart'))
         <table class="table table-bordered">
             <tr>
