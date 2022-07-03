@@ -8,21 +8,30 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end"  id="navbarText">
       <ul class="navbar-nav justify-content-sm-center mb-3 mb-lg-0">
+      @if(Session::has('user'))
       <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('vendorDashboard')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Profile</a>
+          <a class="nav-link active" aria-current="page" href="{{route('EditProfile')}}">Profile</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{route('mycart')}}">cart</a>
         </li>
         
+        
+        @else
         <li class="nav-item">
           <a class="nav-link" href="#">Registration</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('logout')}}">Logout</a>
         </li>
+        @endif
       </ul>
        
     </div>
   </div>
 </nav>
+

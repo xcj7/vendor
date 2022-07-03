@@ -29,10 +29,14 @@ Route::get('/Dashboard',[AllUserController::class,'adminDashboard'])->name('admi
 Route::get('/vendorDashboard',[AllUserController::class,'vendorDashboard'])->name('vendorDashboard')->middleware('vendor');
 Route::get('/StockedProducts',[CreateCardController::class,'show'])->name('StockedProducts')->middleware('vendor');
 Route::get('/CreateCard',[CreateCardController::class,'CreateCard'])->name('CreateCard')->middleware('vendor');
-Route::post('/CreateCard',[CreateCardController::class,'CreateCardSubmitted'])->name('CreateCard')->middleware('vendor');
+Route::post('/CreateCard',[CreateCardController::class,'CreateCardSubmitted'])->name('CreateCard');
 Route::get('/cancel',[CreateCardController::class,'CancelFun'])->name('vendorDashboard')->middleware('vendor');
 
 Route::get('/addtocart/{id}',[ProductController::class,'addtocart'])->name('addtocart');
 Route::get('/emptycart',[ProductController::class,'emptycart'])->name('emptycart');
 Route::get('/cart',[ProductController::class,'mycart'])->name('mycart');
 Route::post('/checkout',[ProductController::class,'checkout'])->middleware('vendor')->name('checkout');
+
+
+Route::get('/EditProfile',[AllUserController::class,'EditProfile'])->name('EditProfile')->middleware('vendor');
+Route::post('/EditProfileSubmitted',[AllUserController::class,'EditProfileSubmitted'])->name('EditProfileSubmitted')->middleware('vendor');

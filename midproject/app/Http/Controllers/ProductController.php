@@ -164,7 +164,7 @@ class ProductController extends Controller
         }
 
         session()->forget('cart');
-
+        //return view('pages.Vendor.StockedProduct');
         return "Pruchase Done!";
 
 

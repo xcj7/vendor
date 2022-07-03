@@ -194,9 +194,43 @@ class AllUserController extends Controller
     }
 
 
+    public function EditProfile()
+    {
+        $value = session()->get('user');
+        $stu = all_user::where('id',$value)->first();
+        return view('pages.vendor.profile')->with('UserProfile',$stu);
+    }
 
-
-
+    public function EditProfileSubmitted(Request $request)
+    {
+        $validate = $request->validate([
+            "name"=>"required|min:5|max:20",
+            'email'=>'email',
+            'phone'=>'required',
+            'nid'=>'required',
+            'address'=>'required',
+            'type'=>'required',
+             'password'=>'required| min:8 | max:12'
+        ]);
+        
+        $st = new all_user();
+        $st->name = $request->name;
+        $st->email = $request->email;
+        $st->phone = $request->phone;
+        $st->nid = $request->nid;
+        $st->address = $request->address;
+        $st->password = $request->password;
+        $st->type = $request->type;
+        $st->status = "active";
+        if($st)
+        {
+            $st->save();
+            $request->session()->put('user',$st->id);
+            return redirect()->route('login');
+            //return redirect()->route('profile');       
+        }
+        
+    }
 
 
 
