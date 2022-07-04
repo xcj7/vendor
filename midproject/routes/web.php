@@ -40,3 +40,6 @@ Route::post('/checkout',[ProductController::class,'checkout'])->middleware('vend
 
 Route::get('/EditProfile',[AllUserController::class,'EditProfile'])->name('EditProfile')->middleware('vendor');
 Route::post('/EditProfileSubmitted',[AllUserController::class,'EditProfileSubmitted'])->name('EditProfileSubmitted')->middleware('vendor');
+
+Route::get('/MyOrderHistory',[ProductController::class,'MyOrderHistory'])->name('MyOrderHistory');
+Route::post('/MyOrderHistorySearched',[ProductController::class,'MyOrderHistorySearched'])->name('MyOrderHistorySearched');

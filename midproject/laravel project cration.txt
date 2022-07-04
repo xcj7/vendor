@@ -1,0 +1,15 @@
+composer create-project laravel/laravel your_project_name
+php artisan serve 
+                      {php artisan serve --port=8082   /     localhost:8000 [for default]      /     localhost:8082 [for customized port]  }
+
+To stop the server type ctrl+c in the cmd.
+
+
+php artisan make:view Flight 
+
+php artisan make:controller your_controller_name
+
+
+php artisan make:model Flight --all
+
+

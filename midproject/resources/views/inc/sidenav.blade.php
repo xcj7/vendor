@@ -24,7 +24,8 @@
  
   <h5 class="nav-icon" ><a class="fa-solid fa-clipboard-list" href="{{route('mycart')}}">Cart</a></h5>
   <h5 class="nav-sub-icon"><i class="fa-solid fa-clipboard-list"></i> Order List</h5>
-  <h5 class="nav-sub-icon"><i class="fa-solid fa-clock-rotate-left"></i>  History</h5>
+  <h5 class="nav-sub-icon" ><a class="fa-solid fa-clipboard-list" href="{{route('MyOrderHistory')}}">History</a></h5>
+  
   </div>
 </div>
 <h5 class="nav-icon"><i class="fa-solid fa-envelope-open-text"></i>  Support</h5>

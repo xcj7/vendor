@@ -169,6 +169,25 @@ class ProductController extends Controller
 
 
     }
+
+
+
+    
+    public function MyOrderHistory(){
+        $products = Order::all();
+        return view('pages.vendor.MyOrderHistory')->with('Oders',$products);
+    }
+    
+    public function MyOrderHistorySearched(Request $req){
+
+
+        $id = $req->id;
+        $p = Order::where('o_id',$id)->first();
+
+       
+        return view('pages.vendor.MyOrderHistory')->with('Oders',$p);
+    }
+
     public function addProduct(){
         return view('pages.vendor.addProduct');
     }
